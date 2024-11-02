@@ -7,22 +7,23 @@ import About from "./Components/Home/About.js";
 import Categories from "./Components/Home/Categories.js";
 import Blog from "./Components/Home/Blog.js";
 import Admin from "./Components/Home/Admin.js";
-// import { UpdateFollower } from 'react-mouse-follower';
+import { UpdateFollower } from 'react-mouse-follower';
+import Service from './Components/Services/Service.js';
+import Banner from './Components/Banner/Banner.js';
 
 function App() {
   return (
     <>
         <Router>
-          {/* <UpdateFollower 
+          <UpdateFollower 
             mouseOptions={{
               backgroundColor: "white",
               zIndex: 999,
               followSpeed: 1.5,
             }}
-          > */}
+          >
           <Navbar />
-          {/* </UpdateFollower> */}
-          
+          </UpdateFollower>
               <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/Contact' element={<Contact />} />
@@ -32,6 +33,24 @@ function App() {
                     <Route path='/Login' element={<Admin />} />
               </Routes>
         </Router>
+
+        <UpdateFollower 
+            mouseOptions={{
+              backgroundColor: "red",
+              zIndex: 999,
+              followSpeed: 1.5,
+            }}>
+             <Service />
+          </UpdateFollower>
+       
+          <UpdateFollower 
+            mouseOptions={{
+              backgroundColor: "green",
+              zIndex: 999,
+              followSpeed: 1.5,
+            }}>
+             <Banner />
+          </UpdateFollower> 
     </>
   )
 }

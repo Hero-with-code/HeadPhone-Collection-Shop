@@ -77,7 +77,7 @@ function Home() {
                 animate={{backgroundColor: activeData.bgColor}}
                 transition={{duration: 0.8}}
     >
-
+      
       <div className='container grid grid-cols-1 md:grid-cols-2 min-h-[645px]'>
         {/* Data Info */}
         <div className='flex flex-col justify-center py-1 md:py-0 xl:max-w-[500px] text-white order-2 md:order-1'>
