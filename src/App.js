@@ -7,12 +7,22 @@ import About from "./Components/Home/About.js";
 import Categories from "./Components/Home/Categories.js";
 import Blog from "./Components/Home/Blog.js";
 import Admin from "./Components/Home/Admin.js";
+// import { UpdateFollower } from 'react-mouse-follower';
 
 function App() {
   return (
     <>
         <Router>
+          {/* <UpdateFollower 
+            mouseOptions={{
+              backgroundColor: "white",
+              zIndex: 999,
+              followSpeed: 1.5,
+            }}
+          > */}
           <Navbar />
+          {/* </UpdateFollower> */}
+          
               <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/Contact' element={<Contact />} />

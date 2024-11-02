@@ -1,46 +1,50 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../../Assets/logo.png";
+import { MdMenu } from 'react-icons/md';
+import { SlEarphones } from 'react-icons/sl';
 
 function Navbar() {
   return (
     <>
-       <div className="fixed w-full top-0 left-0 z-20 shadow-md bg-white">
-        <div className='container py-3 sm:py-0'>
-            <div className='flex items-center justify-between'>
+       <div className="bg-brandDark text-white py-3 font-varela">
+        <nav className='container flex justify-between items-center'>
                 {/* LOGO SECTION */}
-                <div>
-                    <Link to="#" className="flex items-center gap-4 text-2xl sm:text-3xl font-bold ps-10">
-                    <img src={logo} alt='logo' className='w-[80px] h-[60px] text-center' /> Collection
+                <div className='flex items-center gap-4'>
+                    <Link to="#" className="text-xl font-bold uppercase">
+                    <img src={logo} alt='logo' className='w-[80px] h-[60px] text-center' />
                     </Link>
+                    <Link to=""><span className='font-extralight text-white text-3xl text-bold'>Collection</span></Link>
                 </div>
                 {/* MENU SECTION */}
-                <div className="flex items-center gap-4">
+                <div className="hidden md:block">
                     
-                    <ul className='hidden sm:flex gap-4'>
+                    <ul className='flex items-center gap-4'>
                         <li>
-                            <Link to="/" className="inline-block py-4 px-4 hover:text-primary">Home</Link>
+                            <Link to="/" className="inline-block py-2 px-3 hover:text-primary uppercase">Home</Link>
                         </li>
                         <li>
-                            <Link to="/About" className="inline-block py-4 px-4 hover:text-primary">About</Link>
+                            <Link to="/About" className="inline-block py-2 px-3 hover:text-primary uppercase">About</Link>
                         </li>                   
                         <li>
-                            <Link to="/Categories" className="inline-block py-4 px-4 hover:text-primary">Categories</Link>
+                            <Link to="/Categories" className="inline-block py-2 px-3 hover:text-primary uppercase">Categories</Link>
                         </li>
                         <li>
-                            <Link to="/Blog" className="inline-block py-4 px-4 hover:text-primary">Blog</Link>
+                            <Link to="/Blog" className="inline-block py-2 px-3 hover:text-primary uppercase">Blog</Link>
                         </li>
                         <li>
-                            <Link to="/Contact" className="inline-block py-4 px-4 hover:text-primary">Contact</Link>
+                            <Link to="/Contact" className="inline-block py-2 px-3 hover:text-primary uppercase">Contact</Link>
+                        </li>
+                        <li>
+                        <Link to="/Login" className="inline-block py-2 px-3 hover:text-primary"><button className='text-xl ps-14'><SlEarphones /></button></Link>
                         </li>
                     </ul>
                 </div>
                 {/* ICON HEADPHONE SECTION */}
-                <div>
-                <Link to="/Login" className="inline-block py-4 px-4 hover:text-primary"><button>User</button></Link>
+                <div className='md:hidden'>
+                    <MdMenu className='text-3xl'/>
                 </div>
-            </div>
-        </div>
+        </nav>
     </div> 
     </>
   )
