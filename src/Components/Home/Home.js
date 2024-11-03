@@ -225,7 +225,7 @@ function Home() {
           </AnimatePresence>
         </div>
         {/* Whatsapp Icon */}
-        <div className='text-[40px] text-white fixed bottom-5  right-[px] hover:rotate-[360deg] duration-500 z-[999] mix-blend-difference'>
+        <div className='text-[40px] text-white fixed bottom-5  right-[25px] hover:rotate-[360deg] duration-500 z-[999] mix-blend-difference'>
           <Link to="https://wa.me/9117048402"><FaWhatsapp /></Link>
         </div>
       </div>
