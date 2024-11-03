@@ -161,7 +161,16 @@ function Home() {
               {
                 HeroData.map((data)=>{
                   return(
-                    <div onClick={()=>handlerActiveData(data)} className='cursor-pointer space-y-3 hover:scale-105 transition-all duration-200'>
+                    <UpdateFollower
+                    mouseOptions={{
+                        backgroundColor: "black",
+                        zIndex: 999,
+                        followSpeed: 1.5,
+                        text: "Read",
+                        scale: 4,
+                        textFontSize: "3px",
+                    }} >
+                    <motion.div onClick={()=>handlerActiveData(data)} className='cursor-pointer space-y-3 hover:scale-105 transition-all duration-200'>
                       <div className='flex justify-center'>
                       <img src={data.image} alt='' className={`w-[80px] img-shadow ${activeData.image===data.image ? "opacity-100 scale-100" : "opacity-50"}`} />
                     </div>
@@ -169,8 +178,9 @@ function Home() {
                       <p className='text-base font-verala opacity-80'>{data.old_price}</p>
                       <p className='text-xl font-bold'>{data.new_price}</p>
                     </div>
-                  </div>);
-                })
+                  </motion.div>;
+                  </UpdateFollower>
+                )})
               }
           </motion.div>
           </div>
@@ -178,6 +188,15 @@ function Home() {
         {/* Hero Image */}
         <div className='flex flex-col justify-end items-center relative order-1 md:order-2'>
         <AnimatePresence mode="wait">
+        <UpdateFollower
+          mouseOptions={{
+          backgroundColor: "black",
+          zIndex: 999,
+          followSpeed: 1.5,
+          text: "View",
+          scale: 3,
+          textFontSize: "3px",
+            }} >
           <motion.img 
           key={activeData.id}
           variants={SlideRight(0.5)}
@@ -185,6 +204,7 @@ function Home() {
           animate="show"
           exit="exit"
           src={activeData.image} alt='' className='w-[150px] md:w-[300px] md:h-[400px] md:bottom-14 xl-w-[350] img-shadow relative z-10' />
+          </UpdateFollower>
           </AnimatePresence>
           <AnimatePresence mode="wait">
           <motion.div
@@ -199,13 +219,13 @@ function Home() {
               },
              }}
              
-          className='text-white/5 lg:text-[250px] md:text-[120px] sm:text-[150px] font-verala font-extrabold absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+          className='text-white/5 lg:text-[150px] md:text-[120px] sm:text-[150px] font-varela font-extrabold absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1/2'>
             {activeData.modal}
           </motion.div>
           </AnimatePresence>
         </div>
         {/* Whatsapp Icon */}
-        <div className='text-[40px] text-white fixed bottom-10  right-[50px] hover:rotate-[360deg] duration-500 z-[999] mix-blend-difference'>
+        <div className='text-[40px] text-white fixed bottom-5  right-[px] hover:rotate-[360deg] duration-500 z-[999] mix-blend-difference'>
           <Link to="https://wa.me/9117048402"><FaWhatsapp /></Link>
         </div>
       </div>

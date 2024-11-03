@@ -21,22 +21,22 @@ function Navbar() {
                     
                     <ul className='flex items-center gap-4'>
                         <li>
-                            <Link to="/" className="inline-block py-2 px-3 hover:text-primary uppercase">Home</Link>
+                            <Link to="/" className="inline-block py-2 px-3 hover:text-primary uppercase cursor-pointer">Home</Link>
                         </li>
                         <li>
                             <Link to="/About" className="inline-block py-2 px-3 hover:text-primary uppercase">About</Link>
                         </li>                   
                         <li>
-                            <Link to="/Categories" className="inline-block py-2 px-3 hover:text-primary uppercase">Categories</Link>
+                            <Link to="/Categories" className="inline-block py-2 px-3 hover:text-primary uppercase ">Categories</Link>
                         </li>
                         <li>
-                            <Link to="/Blog" className="inline-block py-2 px-3 hover:text-primary uppercase">Blog</Link>
+                            <Link to="/Blog" className="inline-block py-2 px-3 hover:text-primary uppercase ">Blog</Link>
                         </li>
                         <li>
-                            <Link to="/Contact" className="inline-block py-2 px-3 hover:text-primary uppercase">Contact</Link>
+                            <Link to="/Contact" className="inline-block py-2 px-3 hover:text-primary uppercase ">Contact</Link>
                         </li>
                         <li>
-                        <Link to="/Login" className="inline-block py-2 px-3 hover:text-primary"><button className='text-xl ps-14'><SlEarphones /></button></Link>
+                        <Link to="/Login" className="inline-block py-2 px-3 hover:text-primary cursor-pointer"><button className='text-xl ps-14'><SlEarphones /></button></Link>
                         </li>
                     </ul>
                 </div>

@@ -5,11 +5,13 @@ import Home from "./Components/Home/Home.js";
 import Contact from "./Components/Home/Contact.js";
 import About from "./Components/Home/About.js";
 import Categories from "./Components/Home/Categories.js";
-import Blog from "./Components/Home/Blog.js";
 import Admin from "./Components/Home/Admin.js";
 import { UpdateFollower } from 'react-mouse-follower';
 import Service from './Components/Services/Service.js';
 import Banner from './Components/Banner/Banner.js';
+import BannerBottom from './Components/Banner/BannerBottom.js';
+import Blog from "./Components/Blog/Blog.js";
+import Footer from "./Components/Footer/Footer.js";
 
 function App() {
   return (
@@ -50,7 +52,26 @@ function App() {
               followSpeed: 1.5,
             }}>
              <Banner />
+             <BannerBottom />
           </UpdateFollower> 
+
+          <UpdateFollower 
+            mouseOptions={{
+              backgroundColor: "black",
+              zIndex: 999,
+              followSpeed: 1.5,
+            }}>
+             <Blog />
+          </UpdateFollower> 
+
+          <UpdateFollower 
+            mouseOptions={{
+              backgroundColor: "white",
+              zIndex: 999,
+              followSpeed: 1.5,
+            }}>
+             <Footer />
+          </UpdateFollower>
     </>
   )
 }

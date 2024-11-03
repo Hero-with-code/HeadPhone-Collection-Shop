@@ -1,101 +1,81 @@
 import React from 'react'
-import icon1 from "../../Assets/obj1.png"
-import icon2 from "../../Assets/obj2.png"
-import icon3 from "../../Assets/obj3.png"
+import pic1 from "../../Assets/blog1.jpg"
+import pic2 from "../../Assets/blog2.jpg"
+import pic3 from "../../Assets/blog3.jpg"
+import pic4 from "../../Assets/blog4.jpg"
 import { UpdateFollower } from 'react-mouse-follower'
 import { motion } from 'framer-motion';
+import { fadeUp } from '../Services/Service'
 
-export const fadeUp = (delay) =>{
-    return {
-      hidden: {
-        opacity: 0,
-        y: 100,
-      },
-      show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.5,
-          delay: delay,
-        },
-      },
-    };
-  };
-
-const ServiceData = [
+const BlogData = [
     {
         id: 1,
-        icons: icon1,
-        title: "Security",
+        icons: pic1,
+        title: "Blog 1",
         des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iusto minima ad ut id eos accusantium aut, aperiam quis incidunt!",
-        delay: 0.5
+        delay: 0.4
     },
     {
         id: 2,
-        icons: icon2,
-        title: "Gurantee",
+        icons: pic2,
+        title: "Blog 2",
         des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iusto minima ad ut id eos accusantium aut, aperiam quis incidunt!",
-        delay: 0.7
+        delay: 0.6
     },
     {
         id: 3,
-        icons: icon3,
-        title: "Affordability",
+        icons: pic3,
+        title: "Blog 3",
         des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iusto minima ad ut id eos accusantium aut, aperiam quis incidunt!",
-        delay: 0.9
+        delay: 0.8
     },
     {
         id: 4,
-        icons: icon1,
-        title: "Security",
+        icons: pic4,
+        title: "Blog 4",
         des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iusto minima ad ut id eos accusantium aut, aperiam quis incidunt!",
-        delay: 1.1
+        delay: 1
     },
 ]
 
-function Service() {
+function Blog() {
   return (
     <>
-    <section className='bg-gray-100 font-varela pb-14'>
+    <section className='bg-gray-100 pb-14'>
         <div className='container py-14'>
             <motion.h1 
              variants={fadeUp(0.2)}
              initial="hidden"
              whileInView="show"
-            className='text-3xl font-bold text-center pb-10'>Our Services</motion.h1>
-        
+            className='text-3xl font-bold text-center font-poppings pb-10'>Our Blog</motion.h1>
+
         <div className='grid grid:cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 '>
             {
-                ServiceData.map((data)=>(
+                BlogData.map((data)=>{
+                    return(
                     <UpdateFollower
                     mouseOptions={{
-                        backgroundColor: "white",
+                        backgroundColor: "black",
                         zIndex: 999,
-                        followSpeed: 0.5,
+                        followSpeed: 1.5,
+                        text: "Read",
                         scale: 5,
-                        rotate: 720,
-                        mixBlendMode: "darken",
-                        backgroundElement: (
-                            <div>
-                                <img src={data.icons} alt='' />
-                            </div>
-                        ),
-                    }}
-                    >
-                    <motion.div
+                        textFontSize: "3px",
+                    }} >
+                    <motion.div id="blog"
                      variants={fadeUp(data.delay)}
                      initial="hidden"
                      whileInView="show"
 
-                    className='flex flex-col items-center justify-center p-5 max-w-[300px] mx-auto shadow-lg bg-white rounded'>
-                        <img src={data.icons} alt='' className='w-[100px] mb-4' />
+                    className='flex flex-col items-center justify-center gap-6 p-5 max-w-[300px] mx-auto shadow-lg bg-white rounded-md'>
+                        <img src={data.icons} alt='' />
                         <div className='text-center space-y-2'>
                             <h1 className='text-2xl font-bold'>{data.title}</h1>
                             <p className='text-center text-sm text-black/75'>{data.des}</p>
                         </div>
                     </motion.div>
                     </UpdateFollower>
-                ))
+                )})
             }
         </div>
         </div>
@@ -104,4 +84,4 @@ function Service() {
   )
 }
 
-export default Service
+export default Blog
